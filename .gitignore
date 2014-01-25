@@ -2,7 +2,8 @@
 bin/
 build/
 logs/
-obj/
+.obj/
+.obj_tests/
 trash/
 
 # FILES

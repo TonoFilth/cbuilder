@@ -15,9 +15,9 @@ ClassInfo::ClassInfo() :
 
 ClassInfo::~ClassInfo()
 {
-	m_HeaderGuard	= "";
-	m_Namespace 	= "";
-	m_ClassName		= "";
+	m_HeaderGuard = "";
+	m_Namespace   = "";
+	m_ClassName	  = "";
 }
 
 // =============================================================================

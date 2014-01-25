@@ -19,7 +19,7 @@ public:
 	ClassInfo();
 	ClassInfo(const ClassInfo& toCopy);
 	ClassInfo& operator=(const ClassInfo& toCopy);
-	~ClassInfo();
+	virtual ~ClassInfo();
 
 	const string& getHeaderGuard() const;
 	const string& getNamespace() const;
