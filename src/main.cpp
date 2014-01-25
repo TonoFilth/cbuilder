@@ -1,10 +1,10 @@
-#include "ClassCreator.h"
+#include "ClassInfo.h"
 
 using namespace fe;
 
 int main(int argc, char** argv)
 {
-	ClassCreator cc;
+	ClassInfo cInfo;
 
 	return 0;
 }
