@@ -1,0 +1,10 @@
+# FOLDERS
+bin/
+build/
+logs/
+obj/
+trash/
+
+# FILES
+a.out
+
