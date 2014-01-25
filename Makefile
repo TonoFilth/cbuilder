@@ -30,6 +30,9 @@ OBJECTS:=$(subst $(TMPDIR)/$(SRCDIR)/main.o,,$(_OBJECTS))
 _EXTLIBS:=
 EXTLIBS:=$(addprefix -l,$(_EXTLIBS))
 
+# INSTALLATION VARS
+INSTALLDIR:=/usr/local/bin
+
 all: check $(OBJECTS) $(MAINFILE)
 	@echo "========================="
 	@echo " Building $(APPNAME) ..."
@@ -44,6 +47,15 @@ $(TMPDIR)/%.o: %.cpp
 check:
 	@test -d $(BUILDDIR) || mkdir $(BUILDDIR)
 	@$(shell find $(SRCDIR) -depth -type d -print | cpio -pd $(TMPDIR))
+
+install:
+	@echo "==============================="
+	@echo "> INSTALLING $(APPNAME) ..."
+	@echo "==============================="
+	@echo "InstallDir is $(INSTALLDIR)"
+	@sudo test $(INSTALLDIR)/$(APPNAME) || rm $(INSTALLDIR)/$(APPNAME)
+	@sudo cp $(BUILDDIR)/$(APPNAME) $(INSTALLDIR)
+	@echo "DONE!"
 
 clean:
 	-rm -Rf $(TMPDIR)
