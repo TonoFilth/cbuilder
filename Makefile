@@ -3,7 +3,7 @@ CC:=g++
 CFLAGS:=-Wall -ggdb -std=c++11
 
 # APP
-APPNAME:=classc
+APPNAME:=cbuilder
 
 # APP DIRECTORIES
 BUILDDIR:=bin
@@ -50,7 +50,7 @@ TESTEXTLIBS:=$(addprefix -l,$(_TESTEXTLIBS))
 # INSTALLATION VARS
 INSTALLDIR:=/usr/local/bin
 
-# ==================================== APP =====================================
+# ================================== COMPILE ===================================
 all: check $(OBJECTS) $(MAINFILE)
 	@echo "========================="
 	@echo " Building $(APPNAME) ..."
@@ -66,16 +66,7 @@ check:
 	@test -d $(BUILDDIR) || mkdir $(BUILDDIR)
 	@$(shell find $(SRCDIR) -depth -type d -print | cpio -pd $(TMPDIR))
 
-install:
-	@echo "==============================="
-	@echo "> INSTALLING $(APPNAME) ..."
-	@echo "==============================="
-	@echo "InstallDir is $(INSTALLDIR)"
-	@sudo test $(INSTALLDIR)/$(APPNAME) || rm $(INSTALLDIR)/$(APPNAME)
-	@sudo cp $(BUILDDIR)/$(APPNAME) $(INSTALLDIR)
-	@echo "DONE!"
-
-# =================================== TESTS ====================================
+# =================================== TEST =====================================
 check-test:
 	@echo "Checking test dirs ..."
 	@test -d $(TESTDIR) || { echo "The directory '$(TESTDIR)' doesn't exists. No tests to run."; exit 1; }
@@ -93,6 +84,16 @@ test: all check-test $(TESTOBJECTS)
 	@echo "==============================="
 	@echo "$(TESTOBJECTS)"
 	$(CC) $(CFLAGS) -I$(INCLUDEDIR) -I$(TESTDIR) $(TESTMAINFILE) $(OBJECTS) $(TESTOBJECTS) $(TESTEXTLIBS) -o $(BUILDDIR)/$(TESTOUTPUTFILE)
+
+# ================================== INSTALL ===================================
+install:
+	@echo "==============================="
+	@echo "> INSTALLING $(APPNAME) ..."
+	@echo "==============================="
+	@echo "InstallDir is $(INSTALLDIR)"
+	@sudo test $(INSTALLDIR)/$(APPNAME) || rm $(INSTALLDIR)/$(APPNAME)
+	@sudo cp $(BUILDDIR)/$(APPNAME) $(INSTALLDIR)
+	@echo "DONE!"
 
 # =================================== OTHER ====================================
 clean:

@@ -1,5 +1,5 @@
-#ifndef ____GUARD_H__
-#define ____GUARD_H__
+#ifndef __GUARD
+#define __GUARD
 
 __NAMESPACE-START
 
