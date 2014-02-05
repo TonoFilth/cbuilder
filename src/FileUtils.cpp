@@ -1,6 +1,3 @@
-#include <iostream>
-#include <fstream>
-
 #include "FileUtils.h"
 
 namespace fe
@@ -43,6 +40,12 @@ bool FileUtils::StringToFile(const string& stringToWrite, const string& fileName
 
 	file.close();
 	return true;
+}
+
+bool FileUtils::Exists(const string& fileName)
+{
+	struct stat buffer;
+	return (stat(fileName.c_str(), &buffer) == 0);
 }
 
 }

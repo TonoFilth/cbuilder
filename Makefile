@@ -11,6 +11,7 @@ INCLUDEDIR:=include
 LIBDIR:=lib
 SRCDIR:=src
 TMPDIR:=.obj
+TEMPLATEDIR:=templates
 
 # SOURCES
 MAINFILE=$(SRCDIR)/main.cpp
@@ -49,6 +50,7 @@ TESTEXTLIBS:=$(addprefix -l,$(_TESTEXTLIBS))
 
 # INSTALLATION VARS
 INSTALLDIR:=/usr/local/bin
+INSTALLHOME:=$(HOME)/.cbuilder
 
 # ================================== COMPILE ===================================
 all: check $(OBJECTS) $(MAINFILE)
@@ -90,9 +92,21 @@ install:
 	@echo "==============================="
 	@echo "> INSTALLING $(APPNAME) ..."
 	@echo "==============================="
-	@echo "InstallDir is $(INSTALLDIR)"
+	@echo "Installing $(APPNAME) in $(INSTALLDIR)"
 	@sudo test $(INSTALLDIR)/$(APPNAME) || rm $(INSTALLDIR)/$(APPNAME)
 	@sudo cp $(BUILDDIR)/$(APPNAME) $(INSTALLDIR)
+	@test -d $(INSTALLHOME) || mkdir $(INSTALLHOME)
+	@echo "Copying templates to $(INSTALLHOME)/$(TEMPLATEDIR)"
+	@cp -R $(TEMPLATEDIR) $(INSTALLHOME)
+	@echo "DONE!"
+
+# ================================= UNINSTALL===================================
+uninstall:
+	@echo "=============================="
+	@echo "> UNINSTALLING $(APPNAME) ..."
+	@echo "=============================="
+	-@sudo rm $(INSTALLDIR)/$(APPNAME)
+	-@rm -R $(INSTALLHOME)
 	@echo "DONE!"
 
 # =================================== OTHER ====================================
