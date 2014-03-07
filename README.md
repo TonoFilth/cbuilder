@@ -17,9 +17,9 @@ templates that came with cbuilder or create them from scratch.
 $ make
 ```
 
-It is recommended that after step 3 you run:
+It's recommended that after step 3 you run:
 ```
-$ make install
+$ sudo make install
 ```
 
 This will install cbuilder on **/usr/local/bin** to make it available from
