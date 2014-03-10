@@ -7,7 +7,7 @@ With cbuilder you can create C++ clases from terminal in just no time.
 If you don't like the default output format you can customize the
 templates that came with cbuilder or create them from scratch.
 
-## BUILD AND INSTALL
+## Build and install
 1. Download source code
 2. Extract it to a folder
 
@@ -25,7 +25,7 @@ $ sudo make install
 This will install cbuilder on **/usr/local/bin** to make it available from
 anywhere if /usr/local/bin is in your **$PATH** environment variable.
 
-## USAGE
+## Usage
 With default templates:
 ```
 $ cbuilder
@@ -97,7 +97,7 @@ MyClass::~MyClass()
 
 }
 ```
-## CUSTOM TEMPLATES
+## Custom templates
 
 Copy the default templates in your working directory or in another directory of your choice.
 ```
