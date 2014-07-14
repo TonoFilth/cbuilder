@@ -7,8 +7,8 @@ namespace fe
 //	CONSTRUCTORS, COPY CONSTRUCTOR, DESTRUCTOR, ASSIGNMENT OPERATOR
 // =============================================================================
 CBInputProcessor::CBInputProcessor() :
-	m_HeaderGuardPrefix("__"),
-	m_HeaderGuardSuffix("_H__")
+	m_HeaderGuardPrefix(""),
+	m_HeaderGuardSuffix("_H")
 {
 }
 
