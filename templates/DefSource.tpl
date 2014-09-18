@@ -1,4 +1,4 @@
-#include "__CLASS.h"
+#include "__CLASS.hpp"
 
 __NAMESPACE-START
 
