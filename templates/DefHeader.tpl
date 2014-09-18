@@ -10,14 +10,14 @@ __NAMESPACE-START
 // ///////////////////////////////////////////////////////////////////////////*/
 class __CLASS
 {
-private:
-	// Non-copyable
-	__CLASS(const __CLASS& toCopy);
-	__CLASS& operator=(const __CLASS& toCopy);
-
 public:
 	__CLASS();
 	~__CLASS();
+
+private:
+	// Non-copyable
+	__CLASS(const __CLASS& toCopy)            = delete;
+	__CLASS& operator=(const __CLASS& toCopy) = delete;
 };
 
 __NAMESPACE-END

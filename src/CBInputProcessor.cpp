@@ -8,7 +8,7 @@ namespace fe
 // =============================================================================
 CBInputProcessor::CBInputProcessor() :
 	m_HeaderGuardPrefix(""),
-	m_HeaderGuardSuffix("_H")
+	m_HeaderGuardSuffix("_HPP")
 {
 }
 

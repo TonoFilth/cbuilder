@@ -1,5 +1,5 @@
-#ifndef __DIRECTORY_UTILS_H__
-#define __DIRECTORY_UTILS_H__
+#ifndef DIRECTORY_UTILS_H
+#define DIRECTORY_UTILS_H
 
 #include <string>
 #include <sys/types.h>

@@ -1,5 +1,5 @@
-#ifndef __CB_INPUT_PROCESSOR_H__
-#define __CB_INPUT_PROCESSOR_H__
+#ifndef CB_INPUT_PROCESSOR_H
+#define CB_INPUT_PROCESSOR_H
 
 #include <string>
 

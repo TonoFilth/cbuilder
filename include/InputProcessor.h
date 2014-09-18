@@ -1,5 +1,5 @@
-#ifndef __INPUT_PROCESSOR_H__
-#define __INPUT_PROCESSOR_H__
+#ifndef INPUT_PROCESSOR_H
+#define INPUT_PROCESSOR_H
 
 #include <iostream>
 #include <functional>

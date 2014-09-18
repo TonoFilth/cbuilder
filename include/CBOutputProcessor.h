@@ -1,5 +1,5 @@
-#ifndef __CB_OUTPUT_PROCESSOR_H__
-#define __CB_OUTPUT_PROCESSOR_H__
+#ifndef CB_OUTPUT_PROCESSOR_H
+#define CB_OUTPUT_PROCESSOR_H
 
 #include <map>
 #include <string>
@@ -18,8 +18,8 @@ class CBOutputProcessor
 private:
 	StringMap m_ReplaceMap;
 
-	void __generateReplaceMap(const ClassInfo& cInfo);
-	string __parseFileContents(const string& fileContents);
+	void generateReplaceMap(const ClassInfo& cInfo);
+	string parseFileContents(const string& fileContents);
 
 public:
 	CBOutputProcessor();

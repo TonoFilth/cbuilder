@@ -1,5 +1,5 @@
-#ifndef __FILE_UTILS_H__
-#define __FILE_UTILS_H__
+#ifndef FILE_UTILS_H
+#define FILE_UTILS_H
 
 #include <iostream>
 #include <fstream>

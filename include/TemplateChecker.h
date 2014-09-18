@@ -1,5 +1,5 @@
-#ifndef __TEMPLATE_CHECKER_H__
-#define __TEMPLATE_CHECKER_H__
+#ifndef TEMPLATE_CHECKER_H
+#define TEMPLATE_CHECKER_H
 
 #include <iostream>
 

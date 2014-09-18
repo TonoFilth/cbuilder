@@ -27,7 +27,7 @@ CBOutputProcessor::~CBOutputProcessor()
 // =============================================================================
 //	PRIVATE AND PROTECTED METHODS
 // =============================================================================
-string CBOutputProcessor::__parseFileContents(const string& fileContents)
+string CBOutputProcessor::parseFileContents(const string& fileContents)
 {
 	string parsedFileContents(fileContents);
 
@@ -45,7 +45,7 @@ string CBOutputProcessor::__parseFileContents(const string& fileContents)
 	return parsedFileContents;
 }
 
-void CBOutputProcessor::__generateReplaceMap(const ClassInfo& cInfo)
+void CBOutputProcessor::generateReplaceMap(const ClassInfo& cInfo)
 {
 	m_ReplaceMap[K_HEADER_GUARD] = cInfo.getHeaderGuard();
 	m_ReplaceMap[K_NS_START] = "namespace " + cInfo.getNamespace() + "\n{";
@@ -69,16 +69,16 @@ bool CBOutputProcessor::processOutput(ClassInfo& cInfo, const string& tplHeader,
 	string hOutFileName(headerOutputFileName);
 	string sOutFileName(sourceOutputFileName);
 
-	if(hOutFileName == "") hOutFileName = cInfo.getClassName() + ".h";
+	if(hOutFileName == "") hOutFileName = cInfo.getClassName() + ".hpp";
 	if(sOutFileName == "") sOutFileName = cInfo.getClassName() + ".cpp";
 
 	if(!FileUtils::FileToString(tplHeader, tplHeaderContents)) return false;
 	if(!FileUtils::FileToString(tplSource, tplSourceContents)) return false;
 
-	__generateReplaceMap(cInfo);
+	generateReplaceMap(cInfo);
 
-	if(!FileUtils::StringToFile(__parseFileContents(tplHeaderContents), hOutFileName)) return false;
-	if(!FileUtils::StringToFile(__parseFileContents(tplSourceContents), sOutFileName)) return false;
+	if(!FileUtils::StringToFile(parseFileContents(tplHeaderContents), hOutFileName)) return false;
+	if(!FileUtils::StringToFile(parseFileContents(tplSourceContents), sOutFileName)) return false;
 
 	return true;
 }

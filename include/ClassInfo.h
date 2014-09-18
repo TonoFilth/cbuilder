@@ -1,5 +1,5 @@
-#ifndef __CLASS_INFO_H__
-#define __CLASS_INFO_H__
+#ifndef CLASS_INFO_H
+#define CLASS_INFO_H
 
 #include <string>
 
