@@ -49,7 +49,7 @@ void CBOutputProcessor::generateReplaceMap(const ClassInfo& cInfo)
 {
 	m_ReplaceMap[K_HEADER_GUARD] = cInfo.getHeaderGuard();
 	m_ReplaceMap[K_NS_START] = "namespace " + cInfo.getNamespace() + "\n{";
-	m_ReplaceMap[K_NS_END] = "}    // namespace " + cInfo.getNamespace();
+	m_ReplaceMap[K_NS_END] = "}   // namespace " + cInfo.getNamespace();
 	m_ReplaceMap[K_CLASS_NAME] = cInfo.getClassName();
 }
 
